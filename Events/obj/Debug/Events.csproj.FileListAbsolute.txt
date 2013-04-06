@@ -55,7 +55,6 @@ c:\users\bruce\documents\visual studio 2012\Projects\Events\Events\bin\ru\System
 c:\users\bruce\documents\visual studio 2012\Projects\Events\Events\bin\ru\WebMatrix.Data.resources.dll
 c:\users\bruce\documents\visual studio 2012\Projects\Events\Events\bin\ru\Microsoft.Web.WebPages.OAuth.resources.dll
 c:\users\bruce\documents\visual studio 2012\Projects\Events\Events\bin\ru\WebMatrix.WebData.resources.dll
-c:\users\bruce\documents\visual studio 2012\Projects\Events\Events\obj\Debug\Events.csprojResolveAssemblyReference.cache
 c:\users\bruce\documents\visual studio 2012\Projects\Events\Events\obj\Debug\Events.dll
 c:\users\bruce\documents\visual studio 2012\Projects\Events\Events\obj\Debug\Events.pdb
 c:\users\bruce\documents\visual studio 2012\Projects\Events\Events\bin\Iesi.Collections.dll

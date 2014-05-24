@@ -38,3 +38,7 @@ c:\users\bruce\documents\visual studio 2012\Projects\Events\Events.Tests\bin\Deb
 c:\users\bruce\documents\visual studio 2012\Projects\Events\Events.Tests\obj\Debug\Events.Tests.csprojResolveAssemblyReference.cache
 c:\users\bruce\documents\visual studio 2012\Projects\Events\Events.Tests\obj\Debug\Events.Tests.dll
 c:\users\bruce\documents\visual studio 2012\Projects\Events\Events.Tests\obj\Debug\Events.Tests.pdb
+c:\users\bruce\documents\visual studio 2012\Projects\Events\Events.Tests\bin\Debug\NHibernate.dll
+c:\users\bruce\documents\visual studio 2012\Projects\Events\Events.Tests\bin\Debug\Iesi.Collections.dll
+c:\users\bruce\documents\visual studio 2012\Projects\Events\Events.Tests\bin\Debug\NHibernate.xml
+c:\users\bruce\documents\visual studio 2012\Projects\Events\Events.Tests\bin\Debug\Iesi.Collections.xml

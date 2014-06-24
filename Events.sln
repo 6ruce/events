@@ -5,6 +5,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Events.Front", "Events.Fron
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Events.Front.Tests", "Events.Front.Tests\Events.Front.Tests.csproj", "{0004C699-0401-4413-A9CE-1A88C65CDA16}"
 EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Events.Backstage", "Events.Backstage\Events.Backstage.fsproj", "{19FD3C37-F66D-4254-952E-6A7FAFB0B263}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -19,6 +21,10 @@ Global
 		{0004C699-0401-4413-A9CE-1A88C65CDA16}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0004C699-0401-4413-A9CE-1A88C65CDA16}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0004C699-0401-4413-A9CE-1A88C65CDA16}.Release|Any CPU.Build.0 = Release|Any CPU
+		{19FD3C37-F66D-4254-952E-6A7FAFB0B263}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{19FD3C37-F66D-4254-952E-6A7FAFB0B263}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{19FD3C37-F66D-4254-952E-6A7FAFB0B263}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{19FD3C37-F66D-4254-952E-6A7FAFB0B263}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

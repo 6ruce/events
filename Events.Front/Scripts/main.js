@@ -6,8 +6,8 @@ app.config(['$routeProvider',
   function ($routeProvider) {
       $routeProvider.
         when('/', {
-            templateUrl: '/Content/Templates/EventPages/list.html',
-            controller: function () {}
+            templateUrl: Constants.TEMPLATES_ROOT + '/EventPages/list.html',
+            //controller: function () {}
         }).
         when('/Events', {
             redirectTo: '/'

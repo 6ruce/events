@@ -131,14 +131,13 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\Site.css" />
-    <Content Include="Content\Templates\EventPages\controls.html" />
-    <Content Include="Content\Templates\EventPages\list.html" />
+    <Content Include="Content\Templates\Event\controls.html" />
+    <Content Include="Content\Templates\Event\list.html" />
+    <Content Include="Content\Templates\Main\welcome.html" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
-    <Compile Include="Scripts\Constants.ts">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Compile>
-    <Content Include="Scripts\Controls\EventControls\OperationController.ts" />
+    <Content Include="Scripts\Constants.ts" />
+    <Content Include="Scripts\Controls\Event\OperationController.ts" />
     <Content Include="Scripts\main.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\ui-bootstrap-tpls-0.11.0.min.js" />
@@ -151,6 +150,9 @@
     </Content>
     <Content Include="Views\Web.config" />
     <Content Include="Views\Home\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Scripts\Collector.ts" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -172,6 +174,7 @@
   </PropertyGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(VSToolsPath)\TypeScript\Microsoft.TypeScript.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
   <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
     <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
@@ -194,6 +197,12 @@
       </FlavorProperties>
     </VisualStudio>
   </ProjectExtensions>
+  <PropertyGroup>
+    <GetFrameworkSdkPath>
+      <Output TaskParameter="Path" PropertyName="SdkPath" />
+    </GetFrameworkSdkPath>
+    <PreBuildEvent>"$(ProgramFiles)\Microsoft SDKs\TypeScript\1.0\tsc.exe" --out "$(ProjectDir)Scripts\Collector.js" "$(ProjectDir)Scripts\Collector.ts"</PreBuildEvent>
+  </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

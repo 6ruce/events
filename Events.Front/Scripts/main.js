@@ -5,10 +5,9 @@ var app =
         .module('EventsApp', ['ui.bootstrap', 'ngRoute'])
         .controller('Controls.Event.OperationController', Controls.Event.OperationController)
         .run(function ($rootScope) {
-            $rootScope.const = {
-                TEMPLATES_ROOT: Constants.TEMPLATES_ROOT
-            };
-        });
+            $rootScope.const = Constants;
+            $rootScope._$ = _$;
+    });
 
 app.config(['$routeProvider',
   function ($routeProvider) {

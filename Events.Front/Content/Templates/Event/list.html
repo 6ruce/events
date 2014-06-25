@@ -1,1 +1,12 @@
 ﻿<div ng-include src="const.TEMPLATES_ROOT + '/Event/controls.html'"></div>
+
+<table class="table table-striped with-top-spacer">
+    <thead>
+        <tr><th>{{_$.ItemNumberSign}}</th><th>{{_$.TableColumnNameCaption}}</th></tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="eventName in events">
+            <td>{{$index + 1}}</td><td>{{eventName}}</td>
+        </tr>
+    </tbody>
+</table>

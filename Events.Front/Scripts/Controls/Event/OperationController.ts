@@ -4,11 +4,13 @@
 
     export class OperationController {
         public static $inject = [
-            '$scope'
+            '$scope',
+            '$location'
         ];
 
-        constructor($scope) {
-            console.log("from constructor");
+        constructor($scope, $location) {
+            $scope.$location = $location;
+            $scope.events = ["Opening..", "Cool stuff happens !!!"];
         }
     }
 }

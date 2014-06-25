@@ -5,12 +5,14 @@
     export class OperationController {
         public static $inject = [
             '$scope',
-            '$location'
+            '$location',
+            'EventResource'
         ];
 
-        constructor($scope, $location) {
+        constructor($scope, $location, EventResource) {
             $scope.$location = $location;
-            $scope.events = ["Opening..", "Cool stuff happens !!!"];
+            EventResource.query((events) => { $scope.events = events; console.log(events);});
+            //$scope.events = ["Opening..", "Cool stuff happens !!!"];
         }
     }
 }

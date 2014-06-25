@@ -137,7 +137,10 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Scripts\Constants.ts" />
+    <Content Include="Scripts\Controls\Event\ResourceFactory.ts" />
     <Content Include="Scripts\Controls\Event\OperationController.ts" />
+    <Content Include="Scripts\Dependencies.ts" />
+    <Content Include="Scripts\Factories.ts" />
     <Content Include="Scripts\main.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\Translations.ts" />

@@ -1,0 +1,5 @@
+﻿<ul class="nav nav-pills nav-stacked" ng-controller="Controls.Main.MenuController">
+    <li ng-repeat="item in menuItems"  class="{{item.active ? 'active' : ''}}">
+        <a href="{{item.path}}" ng-click="itemClick($index)">{{item.name}}</a>
+    </li>
+</ul>

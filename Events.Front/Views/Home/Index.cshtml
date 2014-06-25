@@ -27,10 +27,7 @@
             </div>
             <div class="row">
                 <div class="col-md-2">
-                    <ul class="nav nav-pills nav-stacked">
-                        <li class="active"><a href="/">Home</a></li>
-                        <li><a href="#/Events">Events</a></li>
-                    </ul>
+                    <ng-include src="const.TEMPLATES_ROOT + '/Main/menu.html'"></ng-include>
                 </div>
                 <div class="col-md-10 left-border"><div ng-view="content"></div></div>
             </div>

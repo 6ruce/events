@@ -2,11 +2,17 @@
 
 <table class="table table-striped with-top-spacer">
     <thead>
-        <tr><th>{{_$.ItemNumberSign}}</th><th>{{_$.TableColumnNameCaption}}</th></tr>
+        <tr>
+            <th>{{_$.ItemNumberSign}}</th>
+            <th>{{_$.TableColumn.Name}}</th>
+            <th>{{_$.TableColumn.Description}}</th>
+        </tr>
     </thead>
     <tbody>
-        <tr ng-repeat="eventName in events">
-            <td>{{$index + 1}}</td><td>{{eventName}}</td>
+        <tr ng-repeat="event in events">
+            <td>{{$index + 1}}</td>
+            <td>{{event.Name}}</td>
+            <td>{{event.Description}}</td>
         </tr>
     </tbody>
 </table>

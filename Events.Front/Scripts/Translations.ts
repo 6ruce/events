@@ -1,4 +1,7 @@
 ﻿module _$ {
     export var ItemNumberSign = '#';
-    export var TableColumnNameCaption = 'Name';
+    export var TableColumn = {
+        Name: 'Name',
+        Description: 'Description',
+    };
 }

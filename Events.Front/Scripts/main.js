@@ -3,7 +3,7 @@
 var app =
     angular
         .module('EventsApp', ['ui.bootstrap', 'ngRoute', 'ngResource'])
-        .controller('Controls.Event.OperationController', Controls.Event.OperationController)
+        
         .run(function ($rootScope) {
             $rootScope.const = Constants;
             $rootScope._$ = _$;
@@ -11,6 +11,7 @@ var app =
 
 Dependencies.wire(app);
 Factories.init(app);
+Controllers.init(app);
 
 app.config(['$routeProvider',
   function ($routeProvider) {

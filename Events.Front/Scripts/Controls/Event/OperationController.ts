@@ -6,13 +6,13 @@
         public static $inject = [
             '$scope',
             '$location',
-            'EventResource'
+            'eventResourceFactory'
         ];
 
-        constructor($scope, $location, EventResource) {
+        constructor($scope, $location, eventResourceFactory) {
             $scope.$location = $location;
-            EventResource.query((events) => { $scope.events = events; console.log(events);});
-            //$scope.events = ["Opening..", "Cool stuff happens !!!"];
+            var eventResource = eventResourceFactory.create();
+            $scope.events = eventResource.query();
         }
     }
 }

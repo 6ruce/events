@@ -133,12 +133,15 @@
     <Content Include="Content\Site.css" />
     <Content Include="Content\Templates\Event\controls.html" />
     <Content Include="Content\Templates\Event\list.html" />
+    <Content Include="Content\Templates\Main\menu.html" />
     <Content Include="Content\Templates\Main\welcome.html" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Scripts\Constants.ts" />
+    <Content Include="Scripts\Controllers.ts" />
     <Content Include="Scripts\Controls\Event\ResourceFactory.ts" />
     <Content Include="Scripts\Controls\Event\OperationController.ts" />
+    <Content Include="Scripts\Controls\Main\MenuController.ts" />
     <Content Include="Scripts\Dependencies.ts" />
     <Content Include="Scripts\Factories.ts" />
     <Content Include="Scripts\main.js" />

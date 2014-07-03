@@ -1,5 +1,4 @@
 ﻿module Controls.Main {
-    declare var console;
     declare var _;
 
     export class MenuController {
@@ -15,7 +14,6 @@
             $scope.itemClick = (index) => this.onItemClick(index);
             $scope.$on('$routeChangeSuccess', (event, path) => this.onRouteChange(path));
             this.selectActiveItem();
-            console.log("construct");
         }
 
         private onItemClick(index) {
@@ -23,9 +21,8 @@
         }
 
         private onRouteChange(path) {
-            console.log("route: ");
-            console.log(path.$$route);
-            var matchMenuItem = _.find(this.$scope.menuItems, (item) => item.path.search(path.$$route.originalPath) != -1);
+            var routePath = path.$$route.originalPath;
+            var matchMenuItem = _.find(this.$scope.menuItems, (item) => this.isPartOfItemPath(item, routePath));
             if (matchMenuItem) {
                 this.activateMenuItem(matchMenuItem);
             }
@@ -39,7 +36,7 @@
 
         private selectActiveItem() {
             var currentPath = this.$location.path();
-            var matchMenuItem = _.find(this.$scope.menuItems, (item) => item.path.search(currentPath) != -1);
+            var matchMenuItem = _.find(this.$scope.menuItems, (item) => this.isPartOfItemPath(item, currentPath));
             if (matchMenuItem) {
                 this.activeItem = matchMenuItem;
             } else {
@@ -47,5 +44,10 @@
             }
             this.activeItem.active = true;
         }
+
+        private isPartOfItemPath(item, subPath) {
+            return item.path.search(subPath) != -1;
+        }
+
     }
 }

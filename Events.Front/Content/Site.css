@@ -7,6 +7,10 @@
     margin-top: 20px;
 }
 
+.with-small-top-spacer {
+    margin-top: 10px;
+}
+
 .left-border {
     border-left: 1px solid #ddd
 }

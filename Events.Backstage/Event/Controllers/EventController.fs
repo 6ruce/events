@@ -12,10 +12,13 @@ type EventController() =
     let toViewModel (name : string, description : string) : EventViewModel =
         EventViewModel (Name = name, Description = description)
 
-    let values = Array.map toViewModel
+    static let mutable storage : (string * string) array = 
                     [| 
                     ("Opening..", "Place some opening here"); 
                     ("Cool stuff happens !!!", "Some very cool staff happens, you know") 
                     |]
 
-    member x.Get() = values
+    member x.Get() = Array.map toViewModel storage
+
+    member x.Post(event : EventViewModel) = 
+        storage <- Array.append storage [|(event.Name, event.Description)|]

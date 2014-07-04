@@ -1,7 +1,18 @@
 ﻿<h4>Create some interesting event</h4>
-<form>
-    <input ng-model="event.name" type="text" class="form-control" placeholder="Name">
-    <textarea ng-model="event.description" class="form-control with-small-top-spacer" placeholder="Description"></textarea>
-    <button ng-click="save(event)" class="btn btn-success with-small-top-spacer" type="button" >Save</button>
-    <button ng-click="cancel()" class="btn btn-primary with-small-top-spacer" type="button" >Cancel</button>
+<form name="eventForm">
+    <input name="name" ng-model="event.name" type="text" class="form-control" placeholder="Name" required>
+    <div class="alert alert-danger with-5-top-spacer" ng-show="eventForm.name.$dirty && eventForm.name.$error.required" role="alert">
+        {{_$.Events.Form.ValidationError.EmptyName}}
+    </div>
+
+    <textarea name="description" ng-model="event.description" class="form-control with-small-top-spacer" placeholder="Description" required>
+    </textarea>
+    <div class="alert alert-danger with-5-top-spacer" ng-show="eventForm.description.$dirty && eventForm.description.$error.required" role="alert">
+        {{_$.Events.Form.ValidationError.EmptyDescription}}
+    </div>
+
+    <button ng-click="save(event)" class="btn btn-success with-small-top-spacer" type="button" ng-disabled="eventForm.$invalid">
+        {{_$.Button.Save}}
+    </button>
+    <button ng-click="cancel()" class="btn btn-primary with-small-top-spacer" type="button" >{{_$.Button.Cancel}}</button>
 </form>

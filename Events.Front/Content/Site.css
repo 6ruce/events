@@ -11,6 +11,15 @@
     margin-top: 10px;
 }
 
+.with-5-top-spacer {
+    margin-top: 5px;
+}
+
 .left-border {
     border-left: 1px solid #ddd
+}
+
+form .alert {
+	padding: 5px;
+	margin-bottom: 0px;
 }

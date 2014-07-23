@@ -43,8 +43,10 @@
     <Reference Include="System.Web.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Event\Controllers\EventController.fs" />
-    <Compile Include="Event\Store\DbStore.fs" />
+    <Compile Include="Common\CommonStore\SqlDbStorage.fs" />
+	<Compile Include="Event\EventStore\DbStore.fs" />
+    <Compile Include="Event\Domain\Service\EventService.fs" />
+	<Compile Include="Event\Controllers\EventController.fs" />
   </ItemGroup>
   <PropertyGroup>
     <MinimumVisualStudioVersion Condition="'$(MinimumVisualStudioVersion)' == ''">11</MinimumVisualStudioVersion>

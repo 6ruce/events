@@ -1,4 +1,4 @@
-﻿namespace Event.Domain.Service
+﻿namespace Events.Backstage.Event.Domain.Service
 
 module EventService =
     type Event = {
@@ -9,3 +9,4 @@ module EventService =
     let create (saver : Event -> unit) (event : Event) : unit =
         saver event
 
+    let all (obtainer : unit -> Event list) = obtainer ()

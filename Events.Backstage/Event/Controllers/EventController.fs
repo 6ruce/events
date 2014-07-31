@@ -1,24 +1,23 @@
 ﻿namespace Events.Backstage.Event.Controllers
 
 open System.Web.Http
+open Events.Backstage.Event.Domain.Service
+open Events.Backstage.Event.EventStore
 
-type EventViewModel() = 
+type EventViewModel() =
     [<DefaultValue>] val mutable Name : string
     [<DefaultValue>] val mutable Description : string
 
 type EventController() =
     inherit ApiController()
 
-    let toViewModel (name : string, description : string) : EventViewModel =
-        EventViewModel (Name = name, Description = description)
+    let toViewModel (event : EventService.Event) : EventViewModel =
+        EventViewModel (Name = event.Name, Description = event.Description)
+        
+    let toDomainModel (event : EventViewModel ) : EventService.Event =
+        { Name = event.Name; Description = event.Description}
 
-    static let mutable storage : (string * string) array = 
-                    [| 
-                    ("Opening..", "Place some opening here"); 
-                    ("Cool stuff happens !!!", "Some very cool staff happens, you know") 
-                    |]
+    member x.Get() = List.map toViewModel (EventService.all EventRepo.all)
 
-    member x.Get() = Array.map toViewModel storage
-
-    member x.Post(event : EventViewModel) = 
-        storage <- Array.append storage [|(event.Name, event.Description)|]
+    member x.Post(event : EventViewModel) =
+        EventService.create EventRepo.save <| toDomainModel event

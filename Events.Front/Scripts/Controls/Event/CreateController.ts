@@ -20,12 +20,20 @@
             $scope.save = event => this.onSave(event);
         }
 
-        private onSave(eventForm) {
-            var Event = this.eventResourceFactory.create();
-            var event = new Event();
-            event.Name = eventForm.name;
-            event.Description = eventForm.description;
+        private onSave(formData) {
+            var event = this.createEvent();
+            this.mapFormToEvent(formData, event);
             event.$save(() => this.$location.path(this.EVENTS_LIST_PATH));
+        }
+
+        private createEvent() {
+            var Event = this.eventResourceFactory.create();
+            return new Event();
+        }
+
+        private mapFormToEvent(formData, event) {
+            event.Name = formData.name;
+            event.Description = formData.description;
         }
 
         private onCancel() {

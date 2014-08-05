@@ -3,6 +3,7 @@
 open System.Web.Http
 open Events.Backstage.Event.Domain.Service
 open Events.Backstage.Event.EventStore
+open Events.Backstage.Common.CommonPresentation
 
 type EventViewModel() =
     [<DefaultValue>] val mutable Name : string
@@ -20,4 +21,5 @@ type EventController() =
     member x.Get() = List.map toViewModel (EventService.all EventRepo.all)
 
     member x.Post(event : EventViewModel) =
-        EventService.create EventRepo.save <| toDomainModel event
+        let creationResult = EventService.create EventRepo.save <| toDomainModel event
+        ResponseBuilder.buildSubmition creationResult

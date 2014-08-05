@@ -37,11 +37,14 @@
   <Import Project="$(MSBuildExtensionsPath32)\..\Microsoft SDKs\F#\3.0\Framework\v4.0\Microsoft.FSharp.Targets" Condition=" Exists('$(MSBuildExtensionsPath32)\..\Microsoft SDKs\F#\3.0\Framework\v4.0\Microsoft.FSharp.Targets')" />
   <ItemGroup>
     <Compile Include="Common\CommonStore\SqlDbStorage.fs" />
+    <Compile Include="Common\CommonDomain\CommonValidators\Validators.fs" />
+    <Compile Include="Common\CommonDomain\Service.fs" />
+	<Compile Include="Common\CommonPresentation\ResponseBuilder.fs" />
     <Compile Include="Event\Domain\Service\EventService.fs" />
     <Compile Include="Event\EventStore\DbRepo.fs" />
     <Compile Include="Event\EventStore\Repo.fs" />
-	<Compile Include="Event\Controllers\EventController.fs" />
-	<None Include="packages.config" />
+    <Compile Include="Event\Controllers\EventController.fs" />
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="FSharp.Core">

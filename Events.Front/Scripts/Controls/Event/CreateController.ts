@@ -21,12 +21,12 @@
         }
 
         private onSave(formData) {
-            var event = this.createEvent();
+            var event = this.createEventModel();
             this.mapFormToEvent(formData, event);
             event.$save(() => this.$location.path(this.EVENTS_LIST_PATH));
         }
 
-        private createEvent() {
+        private createEventModel() {
             var Event = this.eventResourceFactory.create();
             return new Event();
         }

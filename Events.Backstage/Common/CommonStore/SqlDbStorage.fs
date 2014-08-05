@@ -1,5 +1,6 @@
 ﻿namespace Events.Backstage.Common.CommonStore
 
+open System.Linq
 open Microsoft.FSharp.Data.TypeProviders
 
 module SqlDbStorage =
@@ -8,3 +9,11 @@ module SqlDbStorage =
 
     type dbSchema = SqlDataConnection<connectionString>
     let db = dbSchema.GetDataContext()
+
+    let all table mapToDomain =
+        (query {
+            for row in table do
+            select row
+        }).AsEnumerable() 
+        |> (Seq.map mapToDomain)
+        |> Seq.toList

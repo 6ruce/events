@@ -9,3 +9,4 @@ FIXME:
 
 TODO:
   * Add refresh button to events list.
+  * Client side handling of server validation.

@@ -1,7 +1,8 @@
 ﻿namespace Events.Backstage.Event.Domain.Service
 
 open Events.Backstage.Common.CommonDomain.Service
-open Events.Backstage.Common.CommonDomain.CommonValidators.Validators
+open Events.Backstage.Common.CommonDomain.CommonValidation.Validation
+open Events.Backstage.Common.CommonDomain.CommonValidation.Validators
 
 module EventService =
     type Event = {
@@ -9,12 +10,12 @@ module EventService =
         Description : string
     }
 
-    type private EventCreateValidators = {
+    type private EventCreationValidators = {
         ForName : Validator<string> list;
         ForDescription : Validator<string> list
     }
 
-    let private createValidators = {
+    let private creationValidators = {
         ForName = [NotEmpty];
         ForDescription = [NotEmpty]
     }
@@ -25,14 +26,10 @@ module EventService =
                 ("Name", validators.ForName, event.Name);
                 ("Description", validators.ForDescription, event.Description);
             ]
-        let collectErrors (fieldName, validators, fieldValue) =
-            match apply fieldName validators fieldValue with
-            | ValidationResult.Success -> None
-            | ValidationResult.Errors fieldErrors -> Some(fieldErrors)
-        List.choose collectErrors validationData 
+        validate validationData
 
     let create (saver : Event -> unit) (event : Event) : Result =
-        let validationErrors = validateCreation createValidators event
+        let validationErrors = validateCreation creationValidators event
         match validationErrors with
         | [] -> 
             saver event

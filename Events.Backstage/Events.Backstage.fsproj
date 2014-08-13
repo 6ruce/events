@@ -37,8 +37,8 @@
   <Import Project="$(MSBuildExtensionsPath32)\..\Microsoft SDKs\F#\3.0\Framework\v4.0\Microsoft.FSharp.Targets" Condition=" Exists('$(MSBuildExtensionsPath32)\..\Microsoft SDKs\F#\3.0\Framework\v4.0\Microsoft.FSharp.Targets')" />
   <ItemGroup>
     <Compile Include="Common\CommonStore\SqlDbStorage.fs" />
-    <Compile Include="Common\CommonDomain\CommonValidation\Validators.fs" />
     <Compile Include="Common\CommonDomain\CommonValidation\Validation.fs" />
+    <Compile Include="Common\CommonDomain\CommonValidation\Validators.fs" />
     <Compile Include="Common\CommonDomain\Service.fs" />
     <Compile Include="Common\CommonPresentation\ResponseBuilder.fs" />
     <Compile Include="Event\Domain\Service\EventService.fs" />

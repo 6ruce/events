@@ -28,13 +28,8 @@ module EventService =
             ]
         validate validationData
 
-    let create (saver : Event -> unit) (event : Event) : Result =
+    let create (save : Event -> unit) (event : Event) : Result =
         let validationErrors = validateCreation creationValidators event
-        match validationErrors with
-        | [] -> 
-            saver event
-            Result.Success
-        | _ -> Result.ValidationErrors validationErrors
-            
+        withValidParameters validationErrors (fun () -> save event)
 
     let all (obtainer : unit -> Event list) = obtainer ()

@@ -116,7 +116,6 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -134,6 +133,7 @@
     <Content Include="Scripts\Application.ts" />
     <Content Include="Scripts\Constants.ts" />
     <Content Include="Scripts\Controllers.ts" />
+    <Content Include="Scripts\Controls\Common\ResponseHandler.ts" />
     <Content Include="Scripts\Controls\Event\CreateController.ts" />
     <Content Include="Scripts\Controls\Event\ResourceFactory.ts" />
     <Content Include="Scripts\Controls\Event\ListController.ts" />
